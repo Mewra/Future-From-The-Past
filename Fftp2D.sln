@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fftp2D", "Assembly-CSharp.csproj", "{887C1585-EF7A-E9EE-A415-B5E47C72D7D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fftp2D", "Assembly-CSharp-Editor.csproj", "{44CC4A29-BA88-9CE3-C61A-005DB2AB2551}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{887C1585-EF7A-E9EE-A415-B5E47C72D7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887C1585-EF7A-E9EE-A415-B5E47C72D7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887C1585-EF7A-E9EE-A415-B5E47C72D7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887C1585-EF7A-E9EE-A415-B5E47C72D7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CC4A29-BA88-9CE3-C61A-005DB2AB2551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CC4A29-BA88-9CE3-C61A-005DB2AB2551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CC4A29-BA88-9CE3-C61A-005DB2AB2551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CC4A29-BA88-9CE3-C61A-005DB2AB2551}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
