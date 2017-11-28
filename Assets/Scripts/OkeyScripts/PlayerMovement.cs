@@ -55,11 +55,16 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			InTheFuture=!InTheFuture;
 
-			if(InTheFuture==true)
+			if(InTheFuture==true){
 				_rigidbody.gravityScale=0;
-			else 
+				SoundManager.Instance.PastTravelToFuture();
+			}
+			else {
 				_rigidbody.gravityScale=-1;
-
+				SoundManager.Instance.FutureTravelToPast();
+			}
+				
+			SoundManager.Instance.SwitchBGM(InTheFuture);
 			_rigidbody.Sleep();
 
 			Vector3 playerPositionNow = _transform.position;
