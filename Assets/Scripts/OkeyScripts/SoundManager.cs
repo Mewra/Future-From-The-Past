@@ -12,12 +12,14 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip ac_travel_to_future;
 
 	[Header("Soundtrack")]
-	public AudioSource as_bgm;
+	public AudioSource as_bgm_future;
 	public AudioClip ac_bgm_future;
+
+	[Header("Soundtrack")]
+	public AudioSource as_bgm_past;
 	public AudioClip ac_bgm_past;
 
-	public int startingPitch = 4;
-    public int timeToDecrease = 5;
+	float timeStamp;
 	
 	// Use this for initialization
 	void Awake () {
@@ -33,8 +35,9 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	void Start(){
-		as_bgm.clip = ac_bgm_future;
-		as_bgm.Play();
+		as_bgm_future.clip = ac_bgm_future;
+		as_bgm_past.clip = ac_bgm_past;
+		as_bgm_future.Play();
 	}
 
 	public void FutureTravelToPast(){
@@ -47,12 +50,19 @@ public class SoundManager : MonoBehaviour {
 
 	public void SwitchBGM(bool flag){
 		if (flag){
-			as_bgm.clip = ac_bgm_future;
-			as_bgm.Play();
+			as_bgm_past.pitch=0.5f;
+			as_bgm_future.pitch=1.0f;
+
+			as_bgm_past.Pause();
+			as_bgm_future.clip = ac_bgm_future;
+			as_bgm_future.Play();
 		}else{
-			as_bgm.clip = ac_bgm_past;
-			// as_bgm.pitch=0.5f;
-			as_bgm.Play();
+			as_bgm_past.pitch=1.0f;
+			as_bgm_future.pitch=0.5f;
+
+			as_bgm_future.Pause();
+			as_bgm_past.clip = ac_bgm_past;
+			as_bgm_past.Play();
 		}
 		
 	}
