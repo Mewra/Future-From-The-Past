@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Transform _transform;
 	private Rigidbody2D _rigidbody;
 
+	private float nextTime=0.0f;
+
 	// Use this for initialization
 	void Start () {
 		// Debug.Log ("I AM " + gameObject.name);
@@ -28,6 +30,8 @@ public class PlayerMovement : MonoBehaviour {
 		// _animator = GetComponent<Animator>() as Animator;
 		_transform = GetComponent<Transform>() as Transform;
 		_rigidbody = GetComponent<Rigidbody2D>() as Rigidbody2D;
+
+		// nextTime=0.0f;
 		// state = State.Idle;
 	}
 	
@@ -53,6 +57,10 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (Input.GetKeyDown(KeyCode.J))
 		{
+			// Debug.Log(nextTime+"!@#");
+			nextTime=Time.time+1.0f;
+			// Debug.Log("TIME TRAVEL! next time is "+nextTime+" now Time is: "+Time.time);
+
 			InTheFuture=!InTheFuture;
 
 			if(InTheFuture==true){
@@ -64,13 +72,18 @@ public class PlayerMovement : MonoBehaviour {
 				SoundManager.Instance.FutureTravelToPast();
 			}
 				
-			SoundManager.Instance.SwitchBGM(InTheFuture);
+			SoundManager.Instance.SwitchBGM1(InTheFuture);
 			_rigidbody.Sleep();
 
 			Vector3 playerPositionNow = _transform.position;
 			_transform.position = new Vector3(playerPositionNow.x, -playerPositionNow.y, playerPositionNow.z);
 			
 			// Press J to Switch to another gravity System
+		}
+
+		if ((Time.time>nextTime)&&(nextTime!=0.0f)){
+			SoundManager.Instance.SwitchBGM2(InTheFuture);
+			nextTime=0.0f;
 		}
 		
 	}

@@ -48,23 +48,21 @@ public class SoundManager : MonoBehaviour {
 		as_player.PlayOneShot(ac_travel_to_future);
 	}
 
-	public void SwitchBGM(bool flag){
-		if (flag){
-			as_bgm_past.pitch=0.5f;
-			as_bgm_future.pitch=1.0f;
+	public void SwitchBGM1(bool InTheFuture){
+		as_bgm_past.pitch=0.5f;
+		as_bgm_future.pitch=0.5f;
+	}
 
+	public void SwitchBGM2(bool InTheFuture){
+		as_bgm_past.pitch=1.0f;
+		as_bgm_future.pitch=1.0f;
+		if (InTheFuture){
 			as_bgm_past.Pause();
-			as_bgm_future.clip = ac_bgm_future;
 			as_bgm_future.Play();
 		}else{
-			as_bgm_past.pitch=1.0f;
-			as_bgm_future.pitch=0.5f;
-
 			as_bgm_future.Pause();
-			as_bgm_past.clip = ac_bgm_past;
 			as_bgm_past.Play();
-		}
-		
+		}	
 	}
 
 }
