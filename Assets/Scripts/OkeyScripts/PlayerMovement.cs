@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Transform _transform;
 	private Rigidbody2D _rigidbody;
 
+	private SpriteRenderer _playerSpriteRenderer;
+
 	// Use this for initialization
 	void Start () {
 		// Debug.Log ("I AM " + gameObject.name);
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour {
 		_transform = GetComponent<Transform>() as Transform;
 		_rigidbody = GetComponent<Rigidbody2D>() as Rigidbody2D;
 		// state = State.Idle;
+
+		_playerSpriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -69,6 +73,9 @@ public class PlayerMovement : MonoBehaviour {
 
 			Vector3 playerPositionNow = _transform.position;
 			_transform.position = new Vector3(playerPositionNow.x, -playerPositionNow.y, playerPositionNow.z);
+			//_transform.Rotate (0, 180, 180);
+			bool aa = _playerSpriteRenderer.flipY;
+
 			
 			// Press J to Switch to another gravity System
 		}

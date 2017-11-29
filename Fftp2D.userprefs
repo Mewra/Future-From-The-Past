@@ -1,10 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OkeyScripts\ObFollowing.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OkeyScripts\PlayerMovement.cs">
     <Files>
       <File FileName="Assets\Scripts\OkeyScripts\Obstacles.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TempScripts\MovingPlatf.cs" Line="7" Column="1" />
-      <File FileName="Assets\Scripts\OkeyScripts\ObFollowing.cs" Line="20" Column="115" />
+      <File FileName="Assets\Scripts\OkeyScripts\ObFollowing.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OkeyScripts\StopTime.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TempScripts\PlayerResidue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OkeyScripts\PlayerMovement.cs" Line="67" Column="16" />
+      <File FileName="Assets\Scripts\OkeyScripts\BoxOnPlatform.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
