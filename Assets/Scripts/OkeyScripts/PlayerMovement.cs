@@ -21,11 +21,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Transform _transform;
 	private Rigidbody2D _rigidbody;
 
-<<<<<<< HEAD
 	private float nextTime=0.0f;
-=======
 	private SpriteRenderer _playerSpriteRenderer;
->>>>>>> master
 
 	// Use this for initialization
 	void Start () {
