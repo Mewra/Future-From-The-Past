@@ -9,11 +9,14 @@ public class Reset : MonoBehaviour {
 	private Vector3 _initialPosition;
 	private Quaternion _initialRotation;
 	private Vector3 _initialScale;
+	private Rigidbody2D _initialRB;
+	private Rigidbody2D _RB;
 
 
 	// Use this for initialization
 	void Start () {
 		_transform = GetComponent<Transform> ();
+		_RB = GetComponent<Rigidbody2D>();
 		
 	}
 
@@ -32,9 +35,19 @@ public class Reset : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.R)) {
 			_transform.position = _initialPosition;
 			_transform.rotation = _initialRotation;
+			_transform.localScale = _initialScale;
+
+			if (_transform.position.y > 0) {
+				_RB.gravityScale = 0;
+			} else {
+				_RB.gravityScale = -1;
+			}
+
 		}
 		
 	}
+
+
 
 
 }

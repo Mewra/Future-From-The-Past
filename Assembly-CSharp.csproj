@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Exit.cs" />
+     <Compile Include="Assets\ParticlesRadiation.cs" />
      <Compile Include="Assets\Scripts\ObBackground.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\Collectable.cs" />
+     <Compile Include="Assets\Scripts\OkeyScripts\Floating.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\InstantiateHorizontalObj.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\MovingPlatf.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\ObFollowing.cs" />
@@ -60,15 +62,9 @@
      <Compile Include="Assets\Scripts\OkeyScripts\Reset.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\StopTime.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\TempScripts\BoxOnPlatform.cs" />
      <Compile Include="Assets\Scripts\TempScripts\BoxRigidbody.cs" />
-     <Compile Include="Assets\Scripts\TempScripts\CameraTurn.cs" />
-     <Compile Include="Assets\Scripts\TempScripts\DoorOpen.cs" />
      <Compile Include="Assets\Scripts\TempScripts\MovingObstaclesDown.cs" />
-     <Compile Include="Assets\Scripts\TempScripts\MovingObstaclesUp.cs" />
-     <Compile Include="Assets\Scripts\TempScripts\PlayerImageTurn.cs" />
-     <Compile Include="Assets\Scripts\TempScripts\WorldTurn.cs" />
      <Compile Include="Assets\Scripts\UnityTweenPackage\TweenAlpha.cs" />
      <Compile Include="Assets\Scripts\UnityTweenPackage\TweenBase.cs" />
      <Compile Include="Assets\Scripts\UnityTweenPackage\TweenColor.cs" />

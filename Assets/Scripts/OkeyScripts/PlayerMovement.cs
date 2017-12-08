@@ -9,24 +9,28 @@ public class PlayerMovement : MonoBehaviour {
 	public float m_speed = 2.5f;
 
 	[Header("Player Jump")]
-	[Range(0.0f,7.0f)]
-	public float m_jumpHeight = 2.5f;
+	[Range(0.0f,50.0f)] //prima da 0 a 7 ed era 2.5 ma nell'editor 5.5
+	public float m_jumpHeight = 20.0f;
 
 	private float m_horizontal;
 	private float m_vertical;
 
-	private bool InTheFuture;
+	private static bool InTheFuture;
 	// This variable remain true when the player is in future
 
 	private Transform _transform;
 	private Animator _animator;
 	private Rigidbody2D _rigidbody;
+	private BoxCollider2D _boxcoll;
 
 	private float nextTime=0.0f;
 	private SpriteRenderer _playerSpriteRenderer;
 
 	public Transform _ResidueTransform;
 	private Collider2D [] obj;
+
+	private Vector2 _rayOrigin;
+
 
 
 	// Use this for initialization
@@ -42,6 +46,17 @@ public class PlayerMovement : MonoBehaviour {
 		// state = State.Idle;
 
 		_playerSpriteRenderer = GetComponent<SpriteRenderer> ();
+
+		_boxcoll = GetComponent<BoxCollider2D> ();
+
+
+	}
+
+	bool isGrounded(){
+		
+		return Physics2D.Raycast (_rayOrigin, Vector2.up, 0.1f);
+
+
 	}
 	
 	// Update is called once per frame
@@ -49,7 +64,7 @@ public class PlayerMovement : MonoBehaviour {
 		m_horizontal = Math.Sign(Input.GetAxis ("Horizontal"));
 		m_vertical = Math.Sign(Input.GetAxis ("Vertical"));	
 
-		
+
 
 		if(InTheFuture==true){
 			
@@ -91,15 +106,21 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 			_transform.position = _transform.position +
-				_transform.right * m_horizontal * m_speed * Time.deltaTime +
-				_transform.up * m_vertical * m_jumpHeight * Time.deltaTime;
-		}
+			_transform.right * m_horizontal * m_speed * Time.deltaTime;
+			// _transform.up * m_vertical * m_jumpHeight * Time.deltaTime;
 
-		//Debug.Log("Can turn? " + PlayerResidue.GetCantTurn ());
+			_rayOrigin = new Vector2(_boxcoll.bounds.center.x, _boxcoll.bounds.max.y + 0.02f);
+
+			if(Input.GetKeyDown (KeyCode.DownArrow) && isGrounded()){
+					_rigidbody.AddForce (new Vector2 (0, -m_jumpHeight), ForceMode2D.Impulse);
+			}
+
+		}
+			
 
 		if (Input.GetKeyDown (KeyCode.J)) {
 
-			obj = Physics2D.OverlapCircleAll (_ResidueTransform.position, 0.4f);
+			obj = Physics2D.OverlapCircleAll (_ResidueTransform.position, 0.3f);
 
 			if (obj.Length == 1) {
 
@@ -138,6 +159,10 @@ public class PlayerMovement : MonoBehaviour {
 			nextTime=0.0f;
 		}
 		
+	}
+
+	public static bool GetFuture(){
+		return InTheFuture;
 	}
 		
 }
