@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	public float m_speed = 2.5f;
 
 	[Header("Player Jump")]
-	[Range(0.0f,50.0f)] //prima da 0 a 7 ed era 2.5 ma nell'editor 5.5
-	public float m_jumpHeight = 20.0f;
+	[Range(0.0f,10.0f)] //prima da 0 a 7 ed era 2.5 ma nell'editor 5.5
+	public float m_jumpHeight = 5.0f;
 
 	private float m_horizontal;
 	private float m_vertical;
@@ -106,8 +106,8 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 			_transform.position = _transform.position +
-			_transform.right * m_horizontal * m_speed * Time.deltaTime;
-			// _transform.up * m_vertical * m_jumpHeight * Time.deltaTime;
+				_transform.right * m_horizontal * m_speed * Time.deltaTime +
+			 	_transform.up * m_vertical * m_jumpHeight * Time.deltaTime;
 
 			_rayOrigin = new Vector2(_boxcoll.bounds.center.x, _boxcoll.bounds.max.y + 0.02f);
 
