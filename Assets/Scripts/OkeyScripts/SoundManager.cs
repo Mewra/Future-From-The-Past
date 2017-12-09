@@ -8,8 +8,9 @@ public class SoundManager : MonoBehaviour {
 
 	[Header("Player Source")]
 	public AudioSource as_player;
-	public AudioClip ac_travel_to_past;
-	public AudioClip ac_travel_to_future;
+	public AudioClip ac_travel;
+	public AudioClip ac_stopTime;
+	// public AudioClip ac_travel_to_future;
 
 	[Header("Soundtrack")]
 	public AudioSource as_bgm_future;
@@ -35,22 +36,36 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	void Start(){
+		as_player.clip = ac_travel;
 		as_bgm_future.clip = ac_bgm_future;
 		as_bgm_past.clip = ac_bgm_past;
 		as_bgm_future.Play();
 	}
 
 	public void FutureTravelToPast(){
-		as_player.PlayOneShot(ac_travel_to_past);
+		as_player.PlayOneShot(ac_travel);
 	}
 
 	public void PastTravelToFuture(){
-		as_player.PlayOneShot(ac_travel_to_future);
+		as_player.PlayOneShot(ac_travel);
 	}
 
 	public void SwitchBGM1(bool InTheFuture){
 		as_bgm_past.pitch=0.5f;
 		as_bgm_future.pitch=0.5f;
+	}
+
+	public void StopTimeBGM(){
+		as_bgm_past.pitch=0.1f;
+		as_bgm_future.pitch=0.1f;
+		as_player.clip = ac_stopTime;
+		as_player.Play();
+	}
+
+	public void StopTimeEnd(){
+		as_player.Pause();
+		as_bgm_past.pitch=1.0f;
+		as_bgm_future.pitch=1.0f;
 	}
 
 	public void SwitchBGM2(bool InTheFuture){
