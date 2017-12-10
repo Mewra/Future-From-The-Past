@@ -48,6 +48,7 @@ public class Collectable : MonoBehaviour {
 				box.enabled = true;
 				text.enabled = false;
 				pieces.enabled = false;
+				_piecesCollected = 0;
 			}
 			_piece.SetActive (false);
 		}

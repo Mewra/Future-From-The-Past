@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void SwitchBGM2(bool InTheFuture){
-		if(nowInTheTimeStop==true){
+		if(nowInTheTimeStop){
 			if (InTheFuture){
 				as_bgm_past.Pause();
 				as_bgm_future.Play();

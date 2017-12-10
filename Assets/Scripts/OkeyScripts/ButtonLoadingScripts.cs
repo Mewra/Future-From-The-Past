@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonLoadingScripts : MonoBehaviour {
 
 	private string nextLevel;
-	private int levelNum;
+	public static int levelNum;
 
 	void Start () {
 	}
@@ -63,6 +63,9 @@ public class ButtonLoadingScripts : MonoBehaviour {
 				break;
 			case "12":
 				levelNum=12;
+				break;
+			case "13":
+				levelNum=13;
 				break;
 
 			default:
