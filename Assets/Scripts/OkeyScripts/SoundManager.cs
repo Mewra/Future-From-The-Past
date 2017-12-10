@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
 
 	public static SoundManager Instance;
-	private bool nowInTheTimeStop;
 
 	[Header("Player Source")]
 	public AudioSource as_player;
@@ -41,7 +40,6 @@ public class SoundManager : MonoBehaviour {
 		as_bgm_future.clip = ac_bgm_future;
 		as_bgm_past.clip = ac_bgm_past;
 		as_bgm_future.Play();
-		nowInTheTimeStop = false;
 	}
 
 	public void FutureTravelToPast(){
@@ -53,12 +51,8 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void SwitchBGM1(bool InTheFuture){
-		if(nowInTheTimeStop==true){
-
-		}else{
-			as_bgm_past.pitch=0.5f;
-			as_bgm_future.pitch=0.5f;
-		}	
+		as_bgm_past.pitch=0.5f;
+		as_bgm_future.pitch=0.5f;
 	}
 
 	public void StopTimeBGM(){
@@ -66,36 +60,24 @@ public class SoundManager : MonoBehaviour {
 		as_bgm_future.pitch=0.1f;
 		as_player.clip = ac_stopTime;
 		as_player.Play();
-		nowInTheTimeStop = true;
 	}
 
 	public void StopTimeEnd(){
 		as_player.Pause();
 		as_bgm_past.pitch=1.0f;
 		as_bgm_future.pitch=1.0f;
-		nowInTheTimeStop =false;
 	}
 
 	public void SwitchBGM2(bool InTheFuture){
-		if(nowInTheTimeStop==true){
-			if (InTheFuture){
-				as_bgm_past.Pause();
-				as_bgm_future.Play();
-			}else{
-				as_bgm_future.Pause();
-				as_bgm_past.Play();
-			}	
+		as_bgm_past.pitch=1.0f;
+		as_bgm_future.pitch=1.0f;
+		if (InTheFuture){
+			as_bgm_past.Pause();
+			as_bgm_future.Play();
 		}else{
-			as_bgm_past.pitch=1.0f;
-			as_bgm_future.pitch=1.0f;
-			if (InTheFuture){
-				as_bgm_past.Pause();
-				as_bgm_future.Play();
-			}else{
-				as_bgm_future.Pause();
-				as_bgm_past.Play();
-			}	
-		}
+			as_bgm_future.Pause();
+			as_bgm_past.Play();
+		}	
 	}
 
 }
