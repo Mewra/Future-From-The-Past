@@ -25,7 +25,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip ac_bgm_past;
 
 	float timeStamp;
-	
+
 	// Use this for initialization
 	void Awake () {
 		if (Instance == null)
@@ -80,12 +80,7 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void SwitchBGM2(bool InTheFuture){
-<<<<<<< HEAD
-<<<<<<< HEAD
-		if(nowInTheTimeStop){
-=======
 		if(InTheStopTime){
->>>>>>> master
 			if (InTheFuture){
 				as_bgm_past.Pause();
 				as_bgm_future.Play();
@@ -93,16 +88,6 @@ public class SoundManager : MonoBehaviour {
 				as_bgm_future.Pause();
 				as_bgm_past.Play();
 			}	
-<<<<<<< HEAD
-=======
-		as_bgm_past.pitch=1.0f;
-		as_bgm_future.pitch=1.0f;
-		if (InTheFuture){
-			as_bgm_past.Pause();
-			as_bgm_future.Play();
->>>>>>> master
-=======
->>>>>>> master
 		}else{
 			as_bgm_past.pitch=1.0f;
 			as_bgm_future.pitch=1.0f;
