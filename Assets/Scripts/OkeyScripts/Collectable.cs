@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Collectable : MonoBehaviour {
 
 	public int _maxPieces;
-	private static int _piecesCollected = 0;
+	public static int _piecesCollected = 0;
 	public GameObject _piece;
 	//private GameObject [] pieces = new GameObject [_maxPieces];
 	public GameObject _buildable;
@@ -23,7 +23,7 @@ public class Collectable : MonoBehaviour {
 
 		_transformBuildable = _buildable.GetComponent<Transform> ();
 		_tag = _buildable.tag;
-		_buildable.SetActive (false);
+		//_buildable.SetActive (false);
 
 
 

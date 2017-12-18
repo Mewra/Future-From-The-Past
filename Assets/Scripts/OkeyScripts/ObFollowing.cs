@@ -17,7 +17,7 @@ public class ObFollowing : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-			_transform.position = new Vector3 (_targetTransf.position.x, -_targetTransf.position.y, _transform.position.z);
+			_transform.position = new Vector3 (_targetTransf.position.x, -_targetTransf.position.y, _targetTransf.position.z);
 	}
 
 
