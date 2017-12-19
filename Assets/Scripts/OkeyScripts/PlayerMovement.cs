@@ -52,13 +52,13 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	bool isGroundedPast(){
-		Vector2 _rayOrigin = new Vector2(_boxcoll.bounds.max.x, _boxcoll.bounds.max.y + 0.02f);
+		Vector2 _rayOrigin = new Vector2(_boxcoll.bounds.min.x + 0.01f, _boxcoll.bounds.max.y + 0.01f);
 
-		bool hit1= Physics2D.Raycast (_rayOrigin, Vector2.up, 0.1f);
+		bool hit1= Physics2D.Raycast (_rayOrigin, Vector2.up, 0.05f);
 
-		_rayOrigin = new Vector2(_boxcoll.bounds.min.x, _boxcoll.bounds.max.y + 0.02f);
+		_rayOrigin = new Vector2(_boxcoll.bounds.max.x - 0.01f, _boxcoll.bounds.max.y + 0.01f);
 
-		bool hit2= Physics2D.Raycast (_rayOrigin, Vector2.up, 0.1f);
+		bool hit2= Physics2D.Raycast (_rayOrigin, Vector2.up, 0.05f);
 
 		return (hit1 || hit2);
 
@@ -138,27 +138,7 @@ public class PlayerMovement : MonoBehaviour {
 				_animator.SetInteger ("FutureState", 0);
 			}
 
-
-			//_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, m_vertical * m_speed);
-
-
-			/*_transform.position = _transform.position +
-			_transform.right * m_horizontal * m_speed * Time.deltaTime +
-			_transform.up * m_vertical * m_speed * Time.deltaTime;*/
-		
-
-
 		} else {	
-			// if (Input.GetAxis("Vertical")<0){
-			// 	Debug.Log(Input.GetAxis("Vertical"));
-			// 	_animator.SetInteger("PastState",2);
-			// }else if (Input.GetAxis("Horizontal")<0) {
-			// 	_animator.SetInteger("PastState",1);
-			// }else if (Input.GetAxis("Horizontal")>0) {
-			// 	_animator.SetInteger("PastState",3);
-			// }else{
-			// 	_animator.SetInteger("FutureState",0);
-			// }
 			if (m_vertical < 0) {
 				//Debug.Log(m_vertical);
 				_animator.SetInteger ("PastState", 2);
@@ -171,21 +151,6 @@ public class PlayerMovement : MonoBehaviour {
 					_animator.SetInteger ("PastState", 3);
 				}
 			}
-
-			Vector2 orig = new Vector2(_boxcoll.bounds.min.x - 0.02f, _boxcoll.bounds.center.y);
-		//	Debug.Log ("orig: " + orig);
-			Debug.Log ("istouch: " + isTouchingLeft());
-			Debug.DrawRay (orig, -Vector2.right * 0.1f, Color.red);
-
-
-
-			/*if(!isTouchingLeft() || !isTouchingRight())
-				_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, _rigidbody.velocity.y);
-
-			if((Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.W)) && isGroundedPast()){
-				_rigidbody.AddForce (new Vector2 (0, -m_jumpHeight), ForceMode2D.Impulse);
-				//_rigidbody.velocity = new Vector2 (_rigidbody.velocity.x, -m_jumpHeight);
-			}*/
 
 		}
 			
@@ -243,35 +208,34 @@ public class PlayerMovement : MonoBehaviour {
 			_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, m_vertical * m_speed);
 
 
-			/*_transform.position = _transform.position +
-			_transform.right * m_horizontal * m_speed * Time.deltaTime +
-			_transform.up * m_vertical * m_speed * Time.deltaTime;*/
-
-
 		} else {	
 			
 
-			Vector2 orig = new Vector2(_boxcoll.bounds.min.x - 0.02f, _boxcoll.bounds.center.y);
-			//	Debug.Log ("orig: " + orig);
-			Debug.Log ("istouch: " + isTouchingLeft());
-			Debug.DrawRay (orig, -Vector2.right * 0.1f, Color.red);
+			Vector2 orig  = new Vector2(_boxcoll.bounds.max.x - 0.01f, _boxcoll.bounds.max.y + 0.01f);
+			Debug.DrawRay (orig, Vector2.up * 0.05f, Color.red);
+			orig = new Vector2(_boxcoll.bounds.min.x + 0.01f, _boxcoll.bounds.max.y + 0.01f);
+			Debug.DrawRay (orig, Vector2.up * 0.05f, Color.red);
 
-			if (isTouchingLeft () && m_horizontal < 0) {
+			/*if (isTouchingLeft () && m_horizontal < 0) {
 				m_horizontal = 0;
 			}
 			if (isTouchingRight () && m_horizontal > 0) {
 				m_horizontal = 0;
-			}
+			}*/
 
 			//_transform.position = _transform.position + _transform.right * m_horizontal * m_speed * Time.deltaTime;
 			
-
+			//if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
 			_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, _rigidbody.velocity.y);
 
-			if(Input.GetKeyDown (KeyCode.Space) && isGroundedPast()){
+			//if(Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown(KeyCode.W)){
+			if(m_vertical!=0){
+				Debug.Log ("is grounded:" + isGroundedPast ());
+				if(isGroundedPast()){
 			//if((Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.W)) && isGroundedPast()){
-				_rigidbody.AddForce (new Vector2 (0, -m_jumpHeight), ForceMode2D.Impulse);
-				//_rigidbody.velocity = new Vector2 (_rigidbody.velocity.x, -m_jumpHeight);
+				//_rigidbody.AddForce (new Vector2 (0, -m_jumpHeight), ForceMode2D.Impulse);
+				_rigidbody.velocity = new Vector2 (_rigidbody.velocity.x, -5.0f);
+				}
 			}
 
 		}
