@@ -76,7 +76,11 @@
      <Compile Include="Assets\Scripts\OkeyScripts\StopTime.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\StopTimeHorizontal.cs" />
      <Compile Include="Assets\Scripts\TempScripts\BoxOnPlatform.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Backtomainmenu.cs" />
      <Compile Include="Assets\Scripts\UIScripts\MissionSelection.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Pause.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Restart.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Resume.cs" />
      <Compile Include="Assets\Scripts\UIScripts\StartNewGame.cs" />
      <Compile Include="Assets\Scripts\UnityTweenPackage\TweenAlpha.cs" />
      <Compile Include="Assets\Scripts\UnityTweenPackage\TweenBase.cs" />
