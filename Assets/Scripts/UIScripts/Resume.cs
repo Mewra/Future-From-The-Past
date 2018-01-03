@@ -25,5 +25,6 @@ public class Resume : MonoBehaviour {
     {
         print("Button Click");
         _UIIngame.SetActive (false);
+		Time.timeScale=1;
     }
 }

@@ -25,5 +25,6 @@ public class Pause : MonoBehaviour {
     {
         print("Button Click");
         _UIIngame.SetActive (true);
+		Time.timeScale=0;
     }
 }
