@@ -125,7 +125,6 @@ public class PlayerMovement : MonoBehaviour {
 		m_horizontal = Math.Sign(Input.GetAxis ("Horizontal"));
 		m_vertical = Math.Sign(Input.GetAxis ("Vertical"));	
 
-
 		if (InTheFuture == true) {
 			
 			if (Input.GetAxis ("Horizontal") < 0) {
@@ -139,7 +138,7 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 		} else {	
-			if (m_vertical < 0) {
+			if ((m_vertical < 0)||(m_vertical > 0)) {
 				//Debug.Log(m_vertical);
 				_animator.SetInteger ("PastState", 2);
 			} else {
@@ -202,15 +201,10 @@ public class PlayerMovement : MonoBehaviour {
 		m_horizontal = Math.Sign(Input.GetAxis ("Horizontal"));
 		m_vertical = Math.Sign(Input.GetAxis ("Vertical"));	
 
-
 		if (InTheFuture == true) {
-
 			_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, m_vertical * m_speed);
-
-
-		} else {	
+		} else {		
 			
-
 			Vector2 orig  = new Vector2(_boxcoll.bounds.max.x - 0.01f, _boxcoll.bounds.max.y + 0.01f);
 			Debug.DrawRay (orig, Vector2.up * 0.05f, Color.red);
 			orig = new Vector2(_boxcoll.bounds.min.x + 0.01f, _boxcoll.bounds.max.y + 0.01f);
@@ -226,16 +220,20 @@ public class PlayerMovement : MonoBehaviour {
 			//_transform.position = _transform.position + _transform.right * m_horizontal * m_speed * Time.deltaTime;
 			
 			//if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+
 			_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, _rigidbody.velocity.y);
 
 			//if(Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown(KeyCode.W)){
 			if(m_vertical!=0){
+				// SoundManager.Instance.WalkOnTheGround();
 				Debug.Log ("is grounded:" + isGroundedPast ());
 				if(isGroundedPast()){
 			//if((Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.W)) && isGroundedPast()){
 				//_rigidbody.AddForce (new Vector2 (0, -m_jumpHeight), ForceMode2D.Impulse);
 				_rigidbody.velocity = new Vector2 (_rigidbody.velocity.x, -5.0f);
-				}
+				}// }else{
+				// 	SoundManager.Instance.StopWalkOnTheGround();
+				// }
 			}
 
 		}

@@ -14,6 +14,10 @@ public class SoundManager : MonoBehaviour {
 	[Header("Player Stop TIme")]
 	public AudioSource as_player_stopTime;
 	public AudioClip ac_stopTime;
+
+	[Header("Player Walk")]
+	public AudioSource as_player_walk;
+	public AudioClip ac_player_walk;
 	// public AudioClip ac_travel_to_future;
 
 	[Header("Soundtrack")]
@@ -42,9 +46,12 @@ public class SoundManager : MonoBehaviour {
 	void Start(){
 		as_player.clip = ac_travel;
 		as_player_stopTime.clip = ac_stopTime;
+		as_player_walk.clip=ac_player_walk;
 		as_bgm_future.clip = ac_bgm_future;
 		as_bgm_past.clip = ac_bgm_past;
 		as_bgm_future.Play();
+		as_player_walk.Play();
+		as_player_walk.Pause();
 		InTheStopTime=false;
 	}
 
@@ -54,6 +61,14 @@ public class SoundManager : MonoBehaviour {
 
 	public void PastTravelToFuture(){
 		as_player.PlayOneShot(ac_travel);
+	}
+
+	public void LandOnTheGround(){
+		as_player_walk.Play();
+	}
+
+	public void NotOnTheGround(){
+		as_player_walk.Pause();
 	}
 
 	public void SwitchBGM1(bool InTheFuture){
