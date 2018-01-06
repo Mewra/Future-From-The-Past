@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OkeyScripts\PlayerMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OkeyScripts\StopTimeHorizontal.cs">
     <Files>
-      <File FileName="Assets\Scripts\OkeyScripts\PlayerMovement.cs" Line="237" Column="5" />
-      <File FileName="Assets\Scripts\OkeyScripts\Floating.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OkeyScripts\BoxRigidbody.cs" Line="17" Column="1" />
+      <File FileName="Assets\Scripts\OkeyScripts\StopTimeHorizontal.cs" Line="29" Column="33" />
+      <File FileName="Assets\Scripts\OkeyScripts\StopTime.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\OkeyScripts\Obstacles.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
