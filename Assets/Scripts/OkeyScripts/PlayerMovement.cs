@@ -133,11 +133,7 @@ public class PlayerMovement : MonoBehaviour {
 			SoundManager.Instance.LandOnTheGround();
 		}
 
-		// if (InTheFuture){
-		// 	SoundManager.Instance.NotOnTheGround();
-		// }else if (m_horizontal==0){
-		// 	SoundManager.Instance.LandOnTheGround();
-		// }
+
 
 		if (InTheFuture == true) {
 			
