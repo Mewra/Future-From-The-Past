@@ -21,6 +21,7 @@ public class ButtonToMenu : MonoBehaviour {
     void btClick()
     {
         print("Button Click");
+        Time.timeScale=1;
         SceneManager.LoadScene(0);
     }
 }

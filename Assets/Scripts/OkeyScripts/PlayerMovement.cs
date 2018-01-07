@@ -125,6 +125,20 @@ public class PlayerMovement : MonoBehaviour {
 		m_horizontal = Math.Sign(Input.GetAxis ("Horizontal"));
 		m_vertical = Math.Sign(Input.GetAxis ("Vertical"));	
 
+		if (InTheFuture){
+			SoundManager.Instance.NotOnTheGround();
+		}else if (!isGroundedPast()){
+			SoundManager.Instance.NotOnTheGround();
+		}else if (m_horizontal==0){
+			SoundManager.Instance.LandOnTheGround();
+		}
+
+		// if (InTheFuture){
+		// 	SoundManager.Instance.NotOnTheGround();
+		// }else if (m_horizontal==0){
+		// 	SoundManager.Instance.LandOnTheGround();
+		// }
+
 		if (InTheFuture == true) {
 			
 			if (Input.GetAxis ("Horizontal") < 0) {
@@ -200,6 +214,15 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {	
 		m_horizontal = Math.Sign(Input.GetAxis ("Horizontal"));
 		m_vertical = Math.Sign(Input.GetAxis ("Vertical"));	
+
+		// if (InTheFuture){
+		// 	SoundManager.Instance.NotOnTheGround();
+		// }else if (!isGroundedPast()){
+		// 	SoundManager.Instance.NotOnTheGround();
+		// }else if (m_horizontal==0){
+		// 	SoundManager.Instance.LandOnTheGround();
+		// }
+
 
 		if (InTheFuture == true) {
 			_rigidbody.velocity = new Vector2 (m_horizontal * m_speed, m_vertical * m_speed);
