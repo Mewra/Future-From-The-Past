@@ -15,6 +15,10 @@ public class SoundManager : MonoBehaviour {
 	public AudioSource as_player_stopTime;
 	public AudioClip ac_stopTime;
 
+	[Header("Player Switch Obj")]
+	public AudioSource as_player_switchObj;
+	public AudioClip ac_switchObj;
+
 	[Header("Player Walk")]
 	public AudioSource as_player_walk;
 	public AudioClip ac_player_walk;
@@ -61,6 +65,10 @@ public class SoundManager : MonoBehaviour {
 
 	public void PastTravelToFuture(){
 		as_player.PlayOneShot(ac_travel);
+	}
+
+	public void SwitchObj(){
+		as_player_switchObj.PlayOneShot(ac_switchObj);
 	}
 
 	public void LandOnTheGround(){

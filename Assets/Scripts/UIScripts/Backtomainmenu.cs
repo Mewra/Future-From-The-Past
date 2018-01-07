@@ -23,5 +23,6 @@ public class Backtomainmenu : MonoBehaviour {
     {
         print("Button Click");
         SceneManager.LoadScene(0);
+        Time.timeScale=1;
     }
 }

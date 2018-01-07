@@ -22,6 +22,6 @@ public class MissionSelection : MonoBehaviour {
     void btClick()
     {
         print("Button Click");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(13);
     }
 }

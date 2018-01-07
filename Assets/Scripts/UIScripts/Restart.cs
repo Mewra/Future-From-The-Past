@@ -21,6 +21,8 @@ public class Restart : MonoBehaviour {
 
 		void btClick()
 		{
-			SceneManager.LoadScene(ButtonLoadingScripts.levelNum);
+			Time.timeScale=1;
+			Scene scene = SceneManager.GetActiveScene(); 
+			SceneManager.LoadScene(scene.name);
 		}
 }

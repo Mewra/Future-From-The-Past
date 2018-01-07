@@ -64,9 +64,6 @@ public class ButtonLoadingScripts : MonoBehaviour {
 			case "12":
 				levelNum=12;
 				break;
-			case "13":
-				levelNum=13;
-				break;
 
 			default:
 				Debug.Log("WRONG NUMBER");

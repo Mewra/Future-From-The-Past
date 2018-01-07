@@ -32,6 +32,8 @@ public class ObjectMoveHorizontal : MonoBehaviour {
 				_objTransform.right * moveSpeed * Time.deltaTime;
 	}
 
+
+
 	void setSpeedZero(){
 		moveSpeed=0.0f;
 	}
