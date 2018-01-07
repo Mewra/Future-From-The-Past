@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\SoundScripts\Environment.cs" />
      <Compile Include="Assets\Scripts\TempScripts\BoxOnPlatform.cs" />
      <Compile Include="Assets\Scripts\UIScripts\Backtomainmenu.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Dialog1.cs" />
      <Compile Include="Assets\Scripts\UIScripts\Gotonextlevel.cs" />
      <Compile Include="Assets\Scripts\UIScripts\MissionSelection.cs" />
      <Compile Include="Assets\Scripts\UIScripts\Pause.cs" />

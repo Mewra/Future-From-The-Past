@@ -2,25 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogManager2 : MonoBehaviour {
+public class Dialog1 : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject text;
+	public float xToAppear=0.0f;
 
 	private bool executeOnce=true;
 	private float nextTime=0.0f;
-	// public float x_start = 0;
-	// public float x_end = 3.0f;
 
-	// Use this for initialization
 
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (executeOnce&&(player.transform.position.y<0)){
+		if (executeOnce&&(player.transform.position.x>xToAppear)){
 			text.SetActive(true);
 			nextTime=Time.time+5.0f;
 			executeOnce=false;
@@ -28,8 +25,5 @@ public class DialogManager2 : MonoBehaviour {
 		if (Time.time>nextTime){
 			text.SetActive(false);
 		}
-		// if (player.transform.position.x>x_end){
-		// 	text.SetActive(false);
-		// }
 	}
 }
