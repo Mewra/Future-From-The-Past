@@ -25,13 +25,16 @@ public class StopTimeHorizontal : MonoBehaviour {
 			 }*/
 				coroutine1 = Cooldown ();
 				StartCoroutine (coroutine1);
-				pipeline.SetActive (false);
+				//pipeline.SetActive (false);
+				InstantiateHorizontalObj.setStop (true);
 				nextTime = Time.time + 5.0f;
 			}
+			usable = false;
 		}
 
 		if (Time.time>nextTime){
-			pipeline.SetActive(true);
+			//pipeline.SetActive(true);
+			InstantiateHorizontalObj.setStop(false);
 		}
 	}
 

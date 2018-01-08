@@ -22,6 +22,7 @@ public class Exit : MonoBehaviour {
 			// }
 			// Debug.Log("Enter the exit");
 			_UI.SetActive (true);
+			//SoundManager.Instance
 			Time.timeScale=0;
 		}
 	}

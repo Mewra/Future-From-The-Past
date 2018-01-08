@@ -245,7 +245,7 @@ public class PlayerMovement : MonoBehaviour {
 			//if(Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown(KeyCode.W)){
 			if(m_vertical!=0){
 				// SoundManager.Instance.WalkOnTheGround();
-				Debug.Log ("is grounded:" + isGroundedPast ());
+				//Debug.Log ("is grounded:" + isGroundedPast ());
 				if(isGroundedPast()){
 			//if((Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.W)) && isGroundedPast()){
 				//_rigidbody.AddForce (new Vector2 (0, -m_jumpHeight), ForceMode2D.Impulse);

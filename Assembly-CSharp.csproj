@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DialogMigration.cs" />
      <Compile Include="Assets\Scripts\ObBackground.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\BoxRigidbody.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\ButtonLoadingScripts.cs" />
@@ -53,9 +54,6 @@
      <Compile Include="Assets\Scripts\OkeyScripts\ButtonToRestart.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\Collectable.cs" />
-     <Compile Include="Assets\Scripts\OkeyScripts\DialogManager.cs" />
-     <Compile Include="Assets\Scripts\OkeyScripts\DialogManager2.cs" />
-     <Compile Include="Assets\Scripts\OkeyScripts\DialogManager3.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\Exit.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\Floating.cs" />
      <Compile Include="Assets\Scripts\OkeyScripts\InstantiateHorizontalObj.cs" />
@@ -73,6 +71,10 @@
      <Compile Include="Assets\Scripts\SoundScripts\Environment.cs" />
      <Compile Include="Assets\Scripts\TempScripts\BoxOnPlatform.cs" />
      <Compile Include="Assets\Scripts\UIScripts\Backtomainmenu.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Dialog1.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\DialogManager.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\DialogManager2.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\DialogManager3.cs" />
      <Compile Include="Assets\Scripts\UIScripts\Gotonextlevel.cs" />
      <Compile Include="Assets\Scripts\UIScripts\MissionSelection.cs" />
      <Compile Include="Assets\Scripts\UIScripts\Pause.cs" />
