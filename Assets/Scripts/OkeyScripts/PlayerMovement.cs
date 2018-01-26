@@ -25,7 +25,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	private float nextTime=0.0f;
 	private SpriteRenderer _playerSpriteRenderer;
+	private SpriteRenderer _residueSpriteRenderer;
 
+	public GameObject _residue;
 	public Transform _ResidueTransform;
 	private Collider2D [] obj;
 
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour {
 		_playerSpriteRenderer = GetComponent<SpriteRenderer> ();
 
 		_boxcoll = GetComponent<BoxCollider2D> ();
-
+		_residueSpriteRenderer = _residue.GetComponent<SpriteRenderer> ();
 
 	}
 
@@ -163,10 +165,15 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 			
-
+		obj = Physics2D.OverlapCircleAll (_ResidueTransform.position, 0.3f);
+		if (obj.Length != 1) {
+			_residueSpriteRenderer.color = Color.black;
+		}else
+			_residueSpriteRenderer.color = Color.white;
+		
 		if (Input.GetKeyDown (KeyCode.J)) {
 
-			obj = Physics2D.OverlapCircleAll (_ResidueTransform.position, 0.3f);
+
 
 			if (obj.Length == 1) {
 

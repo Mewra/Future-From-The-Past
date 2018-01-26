@@ -1,14 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UIScripts\Pause.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OkeyScripts\ParticlesRadiation.cs">
     <Files>
-      <File FileName="Assets\Scripts\OkeyScripts\InstantiateHorizontalObj.cs" Line="25" Column="34" />
-      <File FileName="Assets\Scripts\OkeyScripts\StopTimeHorizontal.cs" Line="26" Column="5" />
-      <File FileName="Assets\Scripts\OkeyScripts\StopTime.cs" Line="48" Column="3" />
-      <File FileName="Assets\Scripts\OkeyScripts\Exit.cs" Line="25" Column="6" />
-      <File FileName="Assets\Scripts\OkeyScripts\PlayerMovement.cs" Line="248" Column="7" />
-      <File FileName="Assets\Scripts\OkeyScripts\SoundManager.cs" Line="106" Column="21" />
-      <File FileName="Assets\Scripts\UIScripts\Pause.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OkeyScripts\ParticlesRadiation.cs" Line="27" Column="6" />
+      <File FileName="Assets\Scripts\OkeyScripts\BoxRigidbody.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OkeyScripts\Obstacles.cs" Line="54" Column="30" />
+      <File FileName="Assets\Scripts\OkeyScripts\ObFollowing.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
